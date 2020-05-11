@@ -1,0 +1,2 @@
+poclass Post < ApplicationRecord
+end
