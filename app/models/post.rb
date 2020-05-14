@@ -1,2 +1,2 @@
-poclass Post < ApplicationRecord
+class Post < ApplicationRecord
 end
