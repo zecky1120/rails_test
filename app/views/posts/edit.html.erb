@@ -1,0 +1,10 @@
+<h1>編集する</h1>
+<%= form_tag("/posts/#{@post.id}/update") do %>
+<div class="form-group">
+<% @post.errors.full_messages.each do | message | %>
+<%= message %>
+<% end %>
+<textarea name="content" class="form-control" rows="3"><%= @post.content %></textarea>
+</div>
+<input type="submit" class="btn btn-primary" value="保存する">
+<% end %>

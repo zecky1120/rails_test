@@ -1,4 +1,4 @@
-<div class="container">
 <time>投稿日:<%= @post.created_at %></time>
 <h1><%= @post.content %></h1>
-</div>
+<%= link_to("編集","/posts/#{@post.id}/edit",{class: "btn btn-success"}) %>
+<%= link_to("削除","/posts/#{@post.id}/destroy",{ class: "btn btn-danger"}) %>

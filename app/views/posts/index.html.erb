@@ -1,7 +1,7 @@
-<div class="container">
-<h1>投稿一覧</h1>
+<h1 class="mb-3">投稿一覧</h1>
 
 <% @posts.each do | post | %>
-<p><%= link_to(post.content,"/posts/#{post.id}") %></p>
+<p class="m-0"><%= link_to(post.created_at, "/posts/#{post.id}") %></p>
+<p><%= link_to(post.content, "/posts/#{post.id}") %></p>
+<hr>
 <% end %>
-</div>
