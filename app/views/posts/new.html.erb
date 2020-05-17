@@ -2,7 +2,14 @@
 <h1>投稿する</h1>
 <%= form_tag("/posts/create") do %>
 <div class="form-group">
-  <textarea name="content" class="form-control" id="" rows="3"></textarea>
+<% @post.errors.full_messages.each do | message | %>
+<div class="text-danger">
+<%= message %>
+</div>
+<% end %>
+  <textarea name="content" class="form-control" id="" rows="3">
+  <%= @post.content %>
+  </textarea>
 </div>
 <input type="submit" class="btn btn-primary" value="投稿する">
 <% end %>
