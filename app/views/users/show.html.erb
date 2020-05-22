@@ -1,5 +1,5 @@
 <div class="text-center mb-4">
-<img class="mb-4" src="/user_images/<%= @user.image_name %>">
+<img class="mb-4" width="60" height="auto" src="<%= "/user_images/#{@user.image_name}" %>">
 <h2><%= @user.name %></h2>
 <address><%= @user.email %></address>
 <%= link_to("編集","/users/#{@user.id}/edit") %>

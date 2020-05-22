@@ -16,7 +16,7 @@ class UsersController < ApplicationController
       name: params[:name],
       email: params[:email],
       image_name: "default_user.jpg"
-      )
+    )
     if @user.save
       flash[:notice] = "ユーザー登録が完了しました"
       redirect_to("/users/#{@user.id}")
@@ -33,6 +33,7 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
     @user.name = params[:name]
     @user.email = params[:email]
+    @user.image_name = "#{@user.id}.png"
 
     if params[:image]
     @user.image_name = "#{@user.id}.png"
@@ -46,6 +47,10 @@ class UsersController < ApplicationController
     else
       render("/users/edit")
     end
+  end
+
+  def login_form
+
   end
 
 end
